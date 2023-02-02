@@ -1,0 +1,30 @@
+﻿@model DogunDavetUygulamasıCore.Models.Cevap
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Tesekkurler</title>
+</head>
+<body>
+
+    <div>
+        <h1>Bilgilendirme için teşekkürler @Model.Ad @Model.Soyad</h1>
+        @if (Model.DuguneGelecekmi == true) 
+        { 
+            @:Döğüne katılımıznız için teşekkür ederiz,görüşmek üzere:)
+
+        }
+            else
+            {
+                @:Üzgünüm,çok şey kaçıracaksın,hatta bekarsan belki de evlenebilirdin 
+            }
+
+        Düğüne katılanları görmek için lütfen <a asp-action="CevaplariListele">buraya</a> tıklayınız
+    </div>
+</body>
+</html>

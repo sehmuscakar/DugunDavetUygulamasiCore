@@ -1,0 +1,38 @@
+﻿@model IEnumerable<DogunDavetUygulamasıCore.Models.Cevap>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Düğüne Katılanlar</title>
+</head>
+<body>
+    <h3>Düğüne Gelenler</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Ad</th>
+                <th>Soyad</th>
+                <th>Email</th>
+                <th>Telefon</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            @foreach(DogunDavetUygulamasıCore.Models.Cevap x in Model)
+            {
+                <tr>
+                    <td>@x.Ad</td>
+                    <td>@x.Soyad</td>
+                    <td>@x.Email</td>
+                    <td>@x.Telefon</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</body>
+</html>

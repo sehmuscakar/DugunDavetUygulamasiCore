@@ -1,0 +1,52 @@
+﻿@model DogunDavetUygulamasıCore.Models.Cevap
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>CevapFormu</title>
+    <link href="/css/Style.css" rel="stylesheet" /> <!-- buraya yazdığın css dosyasınınn yolunu vermen lazım ~ tila işaretini sil -->
+</head>
+<body>
+    <form asp-action="CevapFormu" method="post">
+        <!-- formun etributu var bu formda CevapFormu calıştırılıcak ve ben post yontemi ile veri gonderecem-->
+        <!--asp-action bunu link olarak düşün,method="post" buda tıklandığında o forma gidecek anlamında yani -->
+        <div asp-validation-summary="All"></div> <!-- burda validayon hattalarını görebilmemiz için bunu buraya yazman lazım All da hepsi görünsün diye-->
+
+        <div>
+            <label asp-for="Ad">Adınız:</label> <!-- bu asp-for da Ad ismi model kısmıda cevap modelinde tanımladığımız propertlerdir burda gelmesi için yukarda modeli tanımlaman lazım -->
+            <input asp-for="Ad" />
+        </div>
+        <br />
+        <div>
+            <label asp-for="Soyad">Soyadınız:</label>
+            <input asp-for="Soyad" />
+        </div>
+        <br />
+        <div>
+            <label asp-for="Email">Email Adresiniz:</label>
+            <input asp-for="Email" />
+        </div>
+        <br />
+        <div>
+            <label asp-for="Telefon">Telefonunuz:</label>
+            <input asp-for="Telefon" />
+        </div>
+        <br />
+        <div>
+            <label>Düğüne Gelecek misiniz?</label>
+            <select asp-for="DuguneGelecekmi">
+                <option value="">Lütfen Bir seçim yapınız!</option>
+                <option value="true">Evet</option>
+                <option value="false">Hayır</option>
+            </select>
+        </div>
+        <br />
+        <button type="submit">Cevabı Gönder</button> <!-- -->
+    </form> 
+</body>
+</html>
